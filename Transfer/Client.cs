@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
+using System.Threading;
 
 public class UDPVideoStream : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class UDPVideoStream : MonoBehaviour
 
   RawImage dynamicImage;
   Texture2D texture;
+  byte[] data;
 
   void Start()
   {
@@ -22,10 +23,20 @@ public class UDPVideoStream : MonoBehaviour
 
     dynamicImage = GameObject.Find("DynamicImage").GetComponent<RawImage>();
     texture = new Texture2D(1,1);
+
+    new Thread (() =>
+    {
+      while (true) {
+        data = mySock.Receive(ref otherIPEP);
+      }
+    }).Start();
   }
+
   void Update()
   {
-    texture.LoadImage(mySock.Receive(ref otherIPEP));
-    dynamicImage.texture = texture;
+    if (data != null) {
+      texture.LoadImage(data);
+      dynamicImage.texture = texture;
+    }
   }
 }
