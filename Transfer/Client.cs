@@ -19,13 +19,12 @@ public class UDPVideoStream : MonoBehaviour
   {
     myIPEP = new IPEndPoint(IPAddress.Parse("192.168.1.144"), 5000);
     otherIPEP = new IPEndPoint(IPAddress.Parse("192.168.1.144"), 5001);
-    mySock = new UdpClient(myIPEP);
-
     dynamicImage = GameObject.Find("DynamicImage").GetComponent<RawImage>();
     texture = new Texture2D(1,1);
 
     new Thread (() =>
     {
+      mySock = new UdpClient(myIPEP);
       while (true) {
         data = mySock.Receive(ref otherIPEP);
       }
