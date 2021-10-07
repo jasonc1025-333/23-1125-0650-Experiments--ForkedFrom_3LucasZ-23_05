@@ -8,7 +8,6 @@ using System.Threading;
 public class UDPVideoStream : MonoBehaviour
 {
   UdpClient mySock;
-  IPEndPoint myIPEP;
   IPEndPoint otherIPEP;
 
   RawImage dynamicImage;
@@ -17,14 +16,13 @@ public class UDPVideoStream : MonoBehaviour
 
   void Start()
   {
-    myIPEP = new IPEndPoint(IPAddress.Parse("192.168.1.144"), 5000);
-    otherIPEP = new IPEndPoint(IPAddress.Parse("192.168.1.144"), 5001);
+    otherIPEP = new IPEndPoint(IPAddress.Any, 5000);
     dynamicImage = GameObject.Find("DynamicImage").GetComponent<RawImage>();
     texture = new Texture2D(1,1);
 
     new Thread (() =>
     {
-      mySock = new UdpClient(myIPEP);
+      mySock = new UdpClient(6000);
       while (true) {
         data = mySock.Receive(ref otherIPEP);
       }
