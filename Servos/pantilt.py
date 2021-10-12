@@ -1,4 +1,4 @@
-import servo_controller
+import servo_controller as sc
 
 class msg:
 	def __init__(self, data):
@@ -6,8 +6,6 @@ class msg:
 
 msg1 = msg(True)
 msg2 = msg(50)
-callback_servoPWR_enable(msg1)
-callback_servo0_enable(msg1)
-callback_servo0_angle(msg2)
-
-GPIO.cleanup()
+sc.callback_servoPWR_enable(msg1)
+sc.callback_servo0_enable(msg1)
+sc.callback_servo0_angle(msg2)
