@@ -94,7 +94,7 @@ def servo(channel, angle):
 	
 	channel = constrain(channel,0,15)
 	if( (servoPowerEnabled==True) and (servo_enabled[channel]==True) ):
-		print("here")
+		#print("here")
 		angle = constrain(angle, 0, servo_settings.servo_max_angle[channel])
 		servo_saved_angle[channel] = angle
 		onCount  = 0
@@ -105,7 +105,7 @@ def servo(channel, angle):
 		
 def set_pwm(channel, on, off):
 	try:
-		print("here2")
+		#print("here2")
 		bus.write_byte_data(DEVICE_ADDRESS, LED0_ON_L+4*channel, on & 0xFF)
 		bus.write_byte_data(DEVICE_ADDRESS, LED0_ON_H+4*channel, on >> 8)
 		bus.write_byte_data(DEVICE_ADDRESS, LED0_OFF_L+4*channel, off & 0xFF)
