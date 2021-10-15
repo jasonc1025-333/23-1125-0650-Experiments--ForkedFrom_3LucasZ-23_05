@@ -10,7 +10,7 @@ if ON_PI:
     msg1 = sc.msg(True)
     sc.callback_servoPWR_enable(msg1)
     sc.callback_servo0_enable(msg1)
-    sc.callback_servo2_enable(msg1)
+    sc.callback_servo1_enable(msg1)
 
 while True:
     data, addr = sock.recvfrom(4)
