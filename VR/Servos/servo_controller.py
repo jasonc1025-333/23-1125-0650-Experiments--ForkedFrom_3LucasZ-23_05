@@ -36,6 +36,10 @@ servoPowerEnabled = False	#start with the servos powered off
 servo_enabled	 = [True] * 16	#start with all the individuall servos enabled for movement
 servo_saved_angle= [0] *16
 
+class msg:
+	def __init__(self, data):
+		self.data = data
+		
 def constrain(val, min_val, max_val):
     return min(max_val, max(min_val, val))
 
