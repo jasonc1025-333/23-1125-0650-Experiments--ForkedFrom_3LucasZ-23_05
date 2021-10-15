@@ -4,9 +4,9 @@ import time
 
 #config
 #mac
-OTHER_ADDR = ("192.168.1.144", 6000)
+OTHER_ADDR = ("192.168.1.144", 5000)
 #vr
-#OTHER_ADDR = ("192.168.1.139", 6000)
+#OTHER_ADDR = ("192.168.1.139", 5000)
 
 #setup
 camera = cv2.VideoCapture(0)
