@@ -3,10 +3,10 @@ import cv2
 import time
 
 #config
-MY_ADDR = ("", 5000)
+#mac
 OTHER_ADDR = ("192.168.1.144", 6000)
-#MY_ADDR = ("", 5000)
-#OTHER_ADDR = ("192.168.1.139", 5000)
+#vr
+#OTHER_ADDR = ("192.168.1.139", 6000)
 
 #setup
 camera = cv2.VideoCapture(0)
@@ -22,7 +22,8 @@ currentTime = time.time()
 while True:
     prevTime = currentTime
     currentTime = time.time()
-    print("frame time:", currentTime - prevTime)
+    #uncomment for verbose
+    #print("frame time:", currentTime - prevTime)
     retval, frame = camera.read()
     frame = cv2.flip(frame, -1)
     retval, jpg = cv2.imencode('.jpg', frame)
