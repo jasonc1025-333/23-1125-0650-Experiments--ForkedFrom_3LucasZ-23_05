@@ -3,7 +3,7 @@ import cv2
 import time
 
 #config
-MY_ADDR = ("192.168.1.188", 5000)
+MY_ADDR = ("", 5000)
 OTHER_ADDR = ("192.168.1.144", 6000)
 #MY_ADDR = ("", 5000)
 #OTHER_ADDR = ("192.168.1.139", 5000)
