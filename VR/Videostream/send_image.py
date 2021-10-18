@@ -4,14 +4,15 @@ import time
 
 #config
 #mac
-OTHER_ADDR = ("192.168.1.144", 5000)
+#OTHER_ADDR = ("192.168.1.144", 5000)
 #vr
-#OTHER_ADDR = ("192.168.1.139", 5000)
+OTHER_ADDR = ("192.168.1.178", 5000)
+#sudo sysctl -w net.inet.udp.maxdgram=65535
 
 #setup
 camera = cv2.VideoCapture(0)
-camera.set(3, 256)
-camera.set(4, 256)
+camera.set(3, 128)
+camera.set(4, 128)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 #run

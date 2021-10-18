@@ -18,7 +18,7 @@ if ON_PI:
 while True:
     data, addr = sock.recvfrom(4)
     #uncomment for verbose
-    #print("(", data[0], ",", data[1], ")")
+    print("(", data[0], ",", data[1], ")")
     if ON_PI:
         pan_angle = sc.msg(data[0])
         tilt_angle = sc.msg(data[1])
