@@ -22,3 +22,6 @@ def profile(servoId, servoAngle):
 	    angle = sc.msg(int(servoAngle))
 	    sc.callback_servo1_angle(angle)
     return url_for('main')
+
+if __name__ == "__main__":
+    app.run(debug=True)
