@@ -13,12 +13,12 @@ def main():
 
 @app.route('/<servoId>/<servoAngle>')
 def profile(servoId, servoAngle):
-    if servoId == 0:
-		sc.callback_servo0_enable(trueMsg)
-		angle = sc.msg(servoAngle)
-		sc.callback_servo0_angle(angle)
-	elif servoId == 1:
-		sc.callback_servo1_enable(trueMsg)
-		angle = sc.msg(servoAngle)
-		sc.callback_servo1_angle(angle)
-	return url_for('main')
+    if servoId == '0':
+	    sc.callback_servo0_enable(trueMsg)
+	    angle = sc.msg(int(servoAngle))
+	    sc.callback_servo0_angle(angle)
+    elif servoId == '1':
+	    sc.callback_servo1_enable(trueMsg)
+	    angle = sc.msg(int(servoAngle))
+	    sc.callback_servo1_angle(angle)
+    return url_for('main')
