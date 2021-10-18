@@ -12,7 +12,7 @@ def main():
     return "Please enter something like: /0/40"
 
 @app.route('/<servoId>/<servoAngle>')
-def profile(servoId, servoAngle):
+def move_servo(servoId, servoAngle):
     if servoId == '0':
 	    sc.callback_servo0_enable(trueMsg)
 	    angle = sc.msg(int(servoAngle))
@@ -21,7 +21,18 @@ def profile(servoId, servoAngle):
 	    sc.callback_servo1_enable(trueMsg)
 	    angle = sc.msg(int(servoAngle))
 	    sc.callback_servo1_angle(angle)
-    return url_for('main')
+    return ('id', servoId, 'angle', servoAngle)
+
+@app.route("on")
+def board_on():
+    sc.callback_servoPWR_enable(trueMsg)
+    return ('board on')
+
+@app.route("off")
+def board_off():
+    sc.callback_servoPWR_enable(falseMsg)
+    return ('board off')
+    
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
