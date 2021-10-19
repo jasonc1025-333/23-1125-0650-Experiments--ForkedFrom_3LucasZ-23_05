@@ -21,7 +21,7 @@ def move_servo(servoId, servoAngle):
 	    sc.callback_servo1_enable(trueMsg)
 	    angle = sc.msg(int(servoAngle))
 	    sc.callback_servo1_angle(angle)
-    return ('id', servoId, 'angle', servoAngle)
+    return ('id: ' + servoId + ' angle: ' + servoAngle)
 
 @app.route("/on")
 def board_on():
