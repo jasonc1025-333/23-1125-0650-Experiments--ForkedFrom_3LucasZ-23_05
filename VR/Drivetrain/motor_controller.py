@@ -6,7 +6,7 @@ from textwrap import wrap
 #setup
 I2C_PIN = 17
 BUS = smbus.SMBus(6)
-DEVICE_ADDRESS = 0x52
+DEVICE_ADDRESS = 0x53
 LEFT_MOTOR = 3
 RIGHT_MOTOR = 4
 GPIO.setmode(GPIO.BCM)
