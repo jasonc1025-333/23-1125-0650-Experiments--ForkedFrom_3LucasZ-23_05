@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import smbus2 as smbus
 import time
+from textwrap import wrap
 
 #setup
 I2C_PIN = 17
