@@ -11,8 +11,8 @@ OTHER_ADDR = ("192.168.1.178", 5000)
 
 #setup
 camera = cv2.VideoCapture(0)
-camera.set(3, 512)
-camera.set(4, 512)
+camera.set(3, 256)
+camera.set(4, 256)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 #run
