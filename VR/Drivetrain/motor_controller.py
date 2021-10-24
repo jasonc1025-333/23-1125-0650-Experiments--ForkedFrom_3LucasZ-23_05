@@ -18,7 +18,6 @@ def off():
     GPIO.output(I2C_PIN, GPIO.LOW)
 
 def on():
-    set_to(0, 0)
     GPIO.output(I2C_PIN, GPIO.HIGH)
 
 
