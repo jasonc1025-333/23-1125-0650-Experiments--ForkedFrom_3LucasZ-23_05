@@ -1,1 +1,1 @@
-kill $PID_ONE $PID_TWO
+kill $PID_ONE $PID_TWO $PID_THREE

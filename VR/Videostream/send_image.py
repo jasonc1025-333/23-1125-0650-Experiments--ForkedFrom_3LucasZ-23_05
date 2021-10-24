@@ -16,14 +16,12 @@ camera.set(4, 256)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 #run
-print("wait for warm up...")
-time.sleep(3)
-print("sending started")
+time.sleep(1)
+print("Send image begun!")
 currentTime = time.time()
 while True:
     prevTime = currentTime
     currentTime = time.time()
-    #uncomment for verbose
     #print("frame time:", currentTime - prevTime)
     retval, frame = camera.read()
     frame = cv2.flip(frame, -1)
