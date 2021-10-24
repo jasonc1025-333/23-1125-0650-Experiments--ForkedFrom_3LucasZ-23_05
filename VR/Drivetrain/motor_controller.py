@@ -14,19 +14,23 @@ time.sleep(0.1)
 GPIO.setup(I2C_PIN, GPIO.OUT)
 
 def off():
-    set_to(0, 0)
-    GPIO.output(I2C_PIN, GPIO.LOW)
+   set_to(0, 0)
+   GPIO.output(I2C_PIN, GPIO.LOW)
 
 def on():
-    GPIO.output(I2C_PIN, GPIO.HIGH)
+   GPIO.output(I2C_PIN, GPIO.HIGH)
 
 
 def set_to(left, right, verbose=False):
-    BUS.write_i2c_block_data(DEVICE_ADDRESS, LEFT_MOTOR, int_to_byte_array(normalize(left)))
-    BUS.write_i2c_block_data(DEVICE_ADDRESS, RIGHT_MOTOR, int_to_byte_array(normalize(right)))
-    if verbose:
-        print("Left:", left)
-        print("Right:", right)
+   try:
+      BUS.write_i2c_block_data(DEVICE_ADDRESS, LEFT_MOTOR, int_to_byte_array(normalize(left)))
+      BUS.write_i2c_block_data(DEVICE_ADDRESS, RIGHT_MOTOR, int_to_byte_array(normalize(right)))
+   except:
+      print('Motor I2C Error!')
+
+   if verbose:
+      print("Left:", left)
+      print("Right:", right)
 
 def int_to_byte_array(num):
    if num < 0:
@@ -46,5 +50,5 @@ def int_to_byte_array(num):
    return array
 
 def normalize(num):
-    THRESHOLD = 255
-    return max(min(num, THRESHOLD), -1 * THRESHOLD)
+   THRESHOLD = 255
+   return max(min(num, THRESHOLD), -1 * THRESHOLD)
