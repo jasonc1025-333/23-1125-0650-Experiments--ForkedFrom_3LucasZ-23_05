@@ -10,7 +10,7 @@ mc.on()
 print("Receive motor begun!")
 while True:
     data, addr = sock.recvfrom(4)
-    left = int.from_bytes(bytes(data[0]), "big", signed=True)
-    right = int.from_bytes(bytes(data[1]), "big", signed=True)
+    left = data[0]
+    right = data[1]
     print("Motors: (", left, ",", right, ")")
     mc.set_to(left, right)
