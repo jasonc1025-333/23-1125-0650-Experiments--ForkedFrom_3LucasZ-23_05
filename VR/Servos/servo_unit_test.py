@@ -36,6 +36,3 @@ def board_off():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-
-#servos are at "Home position" at (0: 58, 1:130)
-#servos range at (0: [0, 116], 1: [110, 180])

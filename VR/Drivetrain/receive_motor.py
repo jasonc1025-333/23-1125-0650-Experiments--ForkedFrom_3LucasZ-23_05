@@ -1,8 +1,9 @@
 import socket
 import motor_controller as mc
+from Misc import config
 
 #config
-MY_ADDR = ("", 5001)
+MY_ADDR = (config.BOT_IP, config.BOT_MOTOR_PORT)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(MY_ADDR)
 

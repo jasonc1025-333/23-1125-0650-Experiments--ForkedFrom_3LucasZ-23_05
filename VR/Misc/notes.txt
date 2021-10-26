@@ -1,0 +1,5 @@
+servos are at "Home position" at (0: 58, 1:130)
+servos range at (0: [0, 116], 1: [110, 180])
+
+on some devices, must run command:
+sudo sysctl -w net.inet.udp.maxdgram=65535

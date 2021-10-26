@@ -1,13 +1,9 @@
 import socket
 import cv2
 import time
+from Misc import config
 
-#config
-#mac
-#OTHER_ADDR = ("192.168.1.144", 5000)
-#vr
-OTHER_ADDR = ("192.168.1.178", 5000)
-#sudo sysctl -w net.inet.udp.maxdgram=65535
+OTHER_ADDR = (config.OPERATOR_IP, config.OPERATOR_CAMERA_PORT)
 
 #setup
 camera = cv2.VideoCapture(0)
