@@ -18,7 +18,7 @@ currentTime = time.time()
 while True:
     prevTime = currentTime
     currentTime = time.time()
-    #print("frame time:", currentTime - prevTime)
+    print("frame time:", currentTime - prevTime)
     retval, frame = camera.read()
     frame = cv2.flip(frame, -1)
     retval, jpg = cv2.imencode('.jpg', frame)
