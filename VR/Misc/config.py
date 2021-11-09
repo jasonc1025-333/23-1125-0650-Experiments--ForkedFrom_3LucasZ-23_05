@@ -1,7 +1,7 @@
 #mac on dubhub
 #OPERATOR_IP = "192.168.1.144"
 #mac on raspi-ap
-OPERATOR_IP = 192.168.50.149
+OPERATOR_IP = "192.168.50.149"
 #oculus on dubhub
 #OPERATOR_IP = "192.168.1.178"
 #oculus on raspi-ap
