@@ -3,3 +3,8 @@ servos range at (0: [0, 116], 1: [110, 180])
 
 on some devices, must run command:
 sudo sysctl -w net.inet.udp.maxdgram=65535
+
+raspi_gui site: http://192.168.50.1/
+user: admin
+pass: bot-pass
+
