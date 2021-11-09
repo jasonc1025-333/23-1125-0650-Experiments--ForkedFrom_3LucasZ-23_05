@@ -14,5 +14,7 @@ while True:
     #fine tuning since robot motors are reversed and c# bytes are only positive
     left = -1 * (data[0] - 127)
     right = -1 * (data[1] - 127)
-    print("Motors: (", left, ",", right, ")")
     mc.set_to(left, right)
+    
+    if config.VERBOSE:
+        print("Motors: (", left, ",", right, ")")

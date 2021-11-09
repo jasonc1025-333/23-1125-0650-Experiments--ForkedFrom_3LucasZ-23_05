@@ -19,5 +19,6 @@ while True:
     tilt_angle = sc.msg(data[1])
     sc.callback_servo0_angle(pan_angle)
     sc.callback_servo1_angle(tilt_angle)
-
-    print("Pantilt (", data[0], ",", data[1], ")")
+    
+    if config.VERBOSE:
+        print("Pantilt (", data[0], ",", data[1], ")")
