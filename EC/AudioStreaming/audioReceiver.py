@@ -41,6 +41,6 @@ if __name__ == "__main__":
     t2.start()
 
 #cleanup
-stream.stop_stream()
-stream.close()
-p.terminate()
+#stream.stop_stream()
+#stream.close()
+#p.terminate()
