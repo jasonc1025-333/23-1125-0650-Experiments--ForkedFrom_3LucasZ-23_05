@@ -15,7 +15,7 @@ p = pyaudio.PyAudio()
 stream = p.open(format=FORMAT, channels=1, rate=RATE, output=True)
 
 print("audio player started")
-data, addr = sock.recvfrom(CHUNK)
+data, addr = sock.recvfrom(2 * CHUNK)
 while data != '':
     print("Received.")
     stream.write(data[CHUNK:])
