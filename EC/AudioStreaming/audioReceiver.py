@@ -20,6 +20,8 @@ while data != '':
     print("Received.")
     stream.write(data)
     data, addr = sock.recvfrom(CHUNK)
+    data, addr = sock.recvfrom(CHUNK)
+    data, addr = sock.recvfrom(CHUNK)
 
 stream.stop_stream()
 stream.close()
