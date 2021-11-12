@@ -6,7 +6,7 @@ FORMAT = pyaudio.paInt8
 CHANNELS = 1
 RATE = 20480
 
-MY_ADDR = ("localhost", 7000)
+MY_ADDR = ("", 7000)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(MY_ADDR)
