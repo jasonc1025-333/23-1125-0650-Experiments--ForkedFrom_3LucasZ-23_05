@@ -18,8 +18,8 @@ print("audio player started")
 data, addr = sock.recvfrom(CHUNK)
 while data != '':
     print("Received.")
-    stream.write(data)
-    data, addr = sock.recvfrom(CHUNK)
+    stream.write(data[CHUNK:])
+    data, addr = sock.recvfrom(2 * CHUNK)
 
 stream.stop_stream()
 stream.close()
