@@ -17,6 +17,7 @@ stream = p.open(format=FORMAT, channels=1, rate=RATE, output=True)
 print("audio player started")
 data, addr = sock.recvfrom(CHUNK)
 while data != '':
+    print("Received.")
     stream.write(data)
     data, addr = sock.recvfrom(CHUNK)
 

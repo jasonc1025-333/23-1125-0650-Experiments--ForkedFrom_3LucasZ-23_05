@@ -16,8 +16,9 @@ stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_
 print("recording started")
 while True:
     data = stream.read(CHUNK)
-    print(len(data))
-    print(data)
+    #print(len(data))
+    #print(data)
+    print("sent.")
     sock.sendto(data, OTHER_ADDR)
 
 stream.stop_stream()
