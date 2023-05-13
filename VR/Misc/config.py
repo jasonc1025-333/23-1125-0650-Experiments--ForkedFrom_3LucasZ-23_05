@@ -5,7 +5,7 @@
 #oculus on dubhub
 #OPERATOR_IP = "192.168.1.178"
 #oculus on raspi-ap
-OPERATOR_IP = "192.168.50.140"
+OPERATOR_IP = "192.168.50.122"
 OPERATOR_CAMERA_PORT = 5001
 
 BOT_IP = ""

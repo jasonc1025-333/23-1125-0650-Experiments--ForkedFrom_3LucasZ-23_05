@@ -14,6 +14,12 @@ while True:
     #fine tuning since robot motors are reversed and c# bytes are only positive
     left = -1 * (data[0] - 127)
     right = -1 * (data[1] - 127)
+
+    if left > 90:
+        left=250
+    if right > 90:
+        right=250
+
     mc.set_to(left, right)
     
     if config.VERBOSE:

@@ -119,119 +119,14 @@ def set_pwm(channel, on, off):
 		print(e)
 
 
-def callback_servo0_angle(msg):
-	servo(0,msg.data)
-def callback_servo1_angle(msg):
-	servo(1,msg.data)
-def callback_servo2_angle(msg):
-	servo(2,msg.data)
-def callback_servo3_angle(msg):
-	servo(3,msg.data)
-def callback_servo4_angle(msg):
-	servo(4,msg.data)
-def callback_servo5_angle(msg):
-	servo(5,msg.data)
-def callback_servo6_angle(msg):
-	servo(6,msg.data)
-def callback_servo7_angle(msg):
-	servo(7,msg.data)
-def callback_servo8_angle(msg):
-	servo(8,msg.data)
-def callback_servo9_angle(msg):
-	servo(9,msg.data)
-def callback_servo10_angle(msg):
-	servo(10,msg.data)
-def callback_servo11_angle(msg):
-	servo(11,msg.data)
-def callback_servo12_angle(msg):
-	servo(12,msg.data)
-def callback_servo13_angle(msg):
-	servo(13,msg.data)
-def callback_servo14_angle(msg):
-	servo(14,msg.data)
-def callback_servo15_angle(msg):
-	servo(15,msg.data)
+def callback_servo_angle(id, msg):
+	servo(id,msg.data)
 
-def callback_servo0_enable(msg):
+def callback_servo_enable(id, msg):
 	if msg.data == True:
-		servoEnable(0)
+		servoEnable(id)
 	else:
-		servoDisable(0)	
-def callback_servo1_enable(msg):
-	if msg.data == True:
-		servoEnable(1)
-	else:
-		servoDisable(1)
-def callback_servo2_enable(msg):
-	if msg.data == True:
-		servoEnable(2)
-	else:
-		servoDisable(2)
-def callback_servo3_enable(msg):
-	if msg.data == True:
-		servoEnable(3)
-	else:
-		servoDisable(3)
-def callback_servo4_enable(msg):
-	if msg.data == True:
-		servoEnable(4)
-	else:
-		servoDisable(4)
-def callback_servo5_enable(msg):
-	if msg.data == True:
-		servoEnable(5)
-	else:
-		servoDisable(5)
-def callback_servo6_enable(msg):
-	if msg.data == True:
-		servoEnable(6)
-	else:
-		servoDisable(6)
-def callback_servo7_enable(msg):
-	if msg.data == True:
-		servoEnable(7)
-	else:
-		servoDisable(7)
-def callback_servo8_enable(msg):
-	if msg.data == True:
-		servoEnable(8)
-	else:
-		servoDisable(8)
-def callback_servo9_enable(msg):
-	if msg.data == True:
-		servoEnable(9)
-	else:
-		servoDisable(9)
-def callback_servo10_enable(msg):
-	if msg.data == True:
-		servoEnable(10)
-	else:
-		servoDisable(10)
-def callback_servo11_enable(msg):
-	if msg.data == True:
-		servoEnable(11)
-	else:
-		servoDisable(11)
-def callback_servo12_enable(msg):
-	if msg.data == True:
-		servoEnable(12)
-	else:
-		servoDisable(12)
-def callback_servo13_enable(msg):
-	if msg.data == True:
-		servoEnable(13)
-	else:
-		servoDisable(13)
-def callback_servo14_enable(msg):
-	if msg.data == True:
-		servoEnable(14)
-	else:
-		servoDisable(14)
-def callback_servo15_enable(msg):
-	if msg.data == True:
-		servoEnable(15)
-	else:
-		servoDisable(15)
+		servoDisable(id)	
 
 def callback_servoPWR_enable(msg):
 	if msg.data == True:

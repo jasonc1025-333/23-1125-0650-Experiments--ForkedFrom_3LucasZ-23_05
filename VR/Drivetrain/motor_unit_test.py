@@ -25,5 +25,11 @@ def board_off():
     mc.off()
     return ('motors off')
 
+
+@app.route("/forward")
+def forward():
+   mc.setTo(200,200)
+   return("GGS")
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
