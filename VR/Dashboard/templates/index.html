@@ -1,0 +1,39 @@
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>Robot Driving UI V1</title>
+</head>
+    <body>
+        <div class='row no-margin no-padding'>
+            
+            
+                
+                <div class='row justify-content-center'>
+                    <button onclick="armUp()" id="forwardBtn" class='btn btn-outline-warning square-button'><img src='../static/images/Up.PNG' class='full-width'></button>
+                </div>
+                <div class='row justify-content-center'>
+                    <button onclick="digUp()" id="leftBtn" class='btn btn-outline-warning square-button'><img src='../static/images/Left.PNG' class='full-width'></button>
+                    <button onclick="toggleLaser()" id="stopBtn" class='btn btn-outline-danger square-button'></button>
+                    <button onclick="digDown()" id="rightBtn" class='btn btn-outline-warning square-button'><img src='../static/images/Right.PNG' class='full-width'></button>
+                </div>  
+                <div class='row justify-content-center'> 
+                    <button onclick="armDown()" id="backwardBtn" class='btn btn-outline-warning square-button'><img src='../static/images/Down.PNG' class='full-width'></button>
+                </div>
+                
+            
+        </div>
+    </body>
+    <script src="../static/socketio.js"></script>
+    <script src="../static/constants.js"></script>
+    <script src="../static/websocket_handler.js"></script>
+    <script src="../static/keypress_handler.js"></script>
+</html>
