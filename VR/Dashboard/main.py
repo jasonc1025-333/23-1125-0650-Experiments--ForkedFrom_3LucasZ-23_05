@@ -4,6 +4,16 @@ from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
 #servos
+###jwc o from Servos import servo_controller as sc
+###jwc n from ../Servos/ import servo_controller as sc
+###jwc n from ..Servos.servo_controller import servo_controller as sc
+###jwc n import ../Servos/servo_controller as sc
+###jwc n from ..Servos import servo_controller as sc
+###jwc n from ..Servos.servo_controller import servo_controller as sc
+###jwc n from ..Servos import servo_controller as sc
+###jwc n from /home/jesus333/23-0921-1500-Jwc/23-1120-1300-Experiments--ForkedFrom_3LucasZ/Experiments--ForkedFrom_3LucasZ_/VR/Servos import servo_controller as sc
+
+# jwc Created 'ln -sv ../Servos/ ./Servos'
 from Servos import servo_controller as sc
 
 #laser
@@ -77,20 +87,49 @@ def digUp():
 
 @socketio.on('armDown')
 def armDown():
-    global armAngle
-    armAngle = clamp(armAngle - speed)
-    s = sc.msg(armAngle)
-    sc.callback_servo_angle(ARM_PIN, s)
-    print("arm", armAngle)
+    ###jwc o global armAngle
+    ###jwc o armAngle = clamp(armAngle - speed)
+    ###jwc o s = sc.msg(armAngle)
+    ###jwc o sc.callback_servo_angle(ARM_PIN, s)
+    ###jwc o print("arm", armAngle)
+
+    servoId = 0
+    servoAngle = 90
+    sc.callback_servo_enable(int(servoId), trueMsg)
+    angle = sc.msg(int(servoAngle))
+    sc.callback_servo_angle(int(servoId),angle)
+    print("arm", servoId, armAngle)
+    return ('id: ' + servoId + ' angle: ' + servoAngle)
+
+    ###jwc o def move_servo(servoId, servoAngle):
+    ###jwc o 	sc.callback_servo_enable(int(servoId), trueMsg)
+    ###jwc o 	angle = sc.msg(int(servoAngle))
+    ###jwc o 	sc.callback_servo_angle(int(servoId),angle)
+    ###jwc o 	return ('id: ' + servoId + ' angle: ' + servoAngle)
 
 
 @socketio.on('armUp')
 def armUp():
-    global armAngle
-    armAngle = clamp(armAngle + speed)
-    s = sc.msg(armAngle)
-    sc.callback_servo_angle(ARM_PIN, s)
-    print("arm", armAngle)
+    ###jwc o global armAngle
+    ###jwc o armAngle = clamp(armAngle + speed)
+    ###jwc o s = sc.msg(armAngle)
+    ###jwc o sc.callback_servo_angle(ARM_PIN, s)
+    ###jwc o print("arm", armAngle)
+
+    servoId = 0
+    servoAngle = 0
+    sc.callback_servo_enable(int(servoId), trueMsg)
+    angle = sc.msg(int(servoAngle))
+    sc.callback_servo_angle(int(servoId),angle)
+    print("arm", servoId, armAngle)
+    return ('id: ' + servoId + ' angle: ' + servoAngle)
+
+    ###jwc o def move_servo(servoId, servoAngle):
+    ###jwc o 	sc.callback_servo_enable(int(servoId), trueMsg)
+    ###jwc o 	angle = sc.msg(int(servoAngle))
+    ###jwc o 	sc.callback_servo_angle(int(servoId),angle)
+    ###jwc o 	return ('id: ' + servoId + ' angle: ' + servoAngle)
+
 
 @socketio.on('toggleLaser')
 def toggleLaser():

@@ -1,7 +1,10 @@
 import RPi.GPIO as GPIO
 import math
 import time
-import servo_settings 
+
+###jwc o import servo_settings 
+from Servos import servo_settings 
+
 import smbus2 as smbus
 
 # Registers/etc:
