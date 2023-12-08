@@ -3,6 +3,7 @@ import math
 import time
 
 ###jwc o import servo_settings 
+###jwc y Create 'symbolic_link' to access a local_library_folder 'Servos': 23-1207-1325: from Servos import servo_settings 
 from Servos import servo_settings 
 
 import smbus2 as smbus
@@ -31,7 +32,11 @@ ALLCALL            = 0x01
 INVRT              = 0x10
 OUTDRV             = 0x04
 
+###jwc o bus = smbus.SMBus(1)		#this is I2C1 on the pi4
+###jwc n does go further but bad error: bus = smbus.SMBus(0)		#this is I2C1 on the pi4
+# jwc 23-1208-0300 make sure do 'sudo raspi-config: enable i2c for SMBus:1'
 bus = smbus.SMBus(1)		#this is I2C1 on the pi4
+
 DEVICE_ADDRESS = 0x40 		#Address of the PCA9685 IC
 		
 servoPowerEnabled = False	#start with the servos powered off

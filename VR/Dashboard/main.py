@@ -95,11 +95,16 @@ def armDown():
 
     servoId = 0
     servoAngle = 90
+    
     sc.callback_servo_enable(int(servoId), trueMsg)
+    
     angle = sc.msg(int(servoAngle))
     sc.callback_servo_angle(int(servoId),angle)
-    print("arm", servoId, armAngle)
-    return ('id: ' + servoId + ' angle: ' + servoAngle)
+    ###jwc o print("arm", servoId, armAngle)
+    print("arm_Down", servoId, servoAngle)
+    
+    ###jwc o return ('id: ' + servoId + ' angle: ' + servoAngle)
+    return ('id: ' + str(servoId) + ' angle: ' + str(servoAngle))
 
     ###jwc o def move_servo(servoId, servoAngle):
     ###jwc o 	sc.callback_servo_enable(int(servoId), trueMsg)
@@ -118,11 +123,16 @@ def armUp():
 
     servoId = 0
     servoAngle = 0
+
     sc.callback_servo_enable(int(servoId), trueMsg)
+    
     angle = sc.msg(int(servoAngle))
     sc.callback_servo_angle(int(servoId),angle)
-    print("arm", servoId, armAngle)
-    return ('id: ' + servoId + ' angle: ' + servoAngle)
+    ###jwc o print("arm", servoId, armAngle)
+    print("arm_Up", servoId, servoAngle)
+    
+    ###jwc o return ('id: ' + servoId + ' angle: ' + servoAngle)
+    return ('id: ' + str(servoId) + ' angle: ' + str(servoAngle))
 
     ###jwc o def move_servo(servoId, servoAngle):
     ###jwc o 	sc.callback_servo_enable(int(servoId), trueMsg)
