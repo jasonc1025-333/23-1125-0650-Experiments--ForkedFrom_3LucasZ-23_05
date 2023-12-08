@@ -3,7 +3,8 @@ import math
 import time
 
 ###jwc o import servo_settings 
-###jwc y Create 'symbolic_link' to access a local_library_folder 'Servos': 23-1207-1325: from Servos import servo_settings 
+# jwc y Create 'symbolic_link' to access a local_library_folder 'Servos': 23-1207-1325: from Servos import servo_settings 
+# jwc Created 'ln -sv ../Servos/ ./Servos'
 from Servos import servo_settings 
 
 import smbus2 as smbus

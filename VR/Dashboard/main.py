@@ -13,6 +13,7 @@ from flask_socketio import SocketIO, emit, send
 ###jwc n from ..Servos import servo_controller as sc
 ###jwc n from /home/jesus333/23-0921-1500-Jwc/23-1120-1300-Experiments--ForkedFrom_3LucasZ/Experiments--ForkedFrom_3LucasZ_/VR/Servos import servo_controller as sc
 
+# jwc y Create 'symbolic_link' to access a local_library_folder 'Servos': 23-1207-1325: from Servos import servo_settings 
 # jwc Created 'ln -sv ../Servos/ ./Servos'
 from Servos import servo_controller as sc
 
