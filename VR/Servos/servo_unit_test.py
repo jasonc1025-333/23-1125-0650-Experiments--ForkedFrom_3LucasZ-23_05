@@ -1,3 +1,9 @@
+# jwc 24-0506-0730 TYJ Works 
+##  '/0/0' '/0/90' '/0/180' Left_Servo
+##  '/1/0' '/1/90' '/1/180' Right_Servo
+##  TYJ LEGO TECHNIC Green Servo *Continuous) Works w/o extra power source needed, just using RPi Power
+##  0 to 180 degrees on protractor from perspective of bystander outside of vehicle (non-driver)
+
 from flask import Flask, url_for
 import servo_controller as sc
 
