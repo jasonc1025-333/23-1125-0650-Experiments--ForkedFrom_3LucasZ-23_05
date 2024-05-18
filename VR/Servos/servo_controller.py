@@ -126,6 +126,7 @@ def set_pwm(channel, on, off):
 	except Exception as e:
 		print("except on set_pwm")
 		print(e)
+		print("Above 2 Errors: [Errno 121] Remote I/O error: CAN IGNORE SINCE NO RQ300 RPI HAT. TODO: UNDO THIS STUB LATER")
 
 
 def callback_servo_angle(id, msg):
